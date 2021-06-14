@@ -11,6 +11,15 @@ import {useState, useEffect} from 'react'
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([])
+  // const [priority, setPriority] = useState([
+  //   {id: 1,
+  //   urgency:'high'},
+  //   {id: 2,
+  //   urgency:'medium'},
+  //   {id: 3,
+  //   urgency:'low'}
+    
+  // ])
 
   useEffect( () => {
     const getTasks = async () => {
@@ -70,6 +79,16 @@ const deleteTask = async (id) => {
    id))
 } 
 
+//two way binding
+// const onChangePriority = (e) => {
+//   const {name, value} = e.target;
+//   setPriority(prevState => ({
+//     ...prevState,
+//     [name]: value
+//   }))
+   
+// }
+
 //Toggle Reminder
 
 const toggleReminder = async (id) => {
@@ -109,6 +128,8 @@ const toggleReminder = async (id) => {
         tasks = {tasks}
         onDelete={deleteTask}
         onToggle= {toggleReminder}
+        // priority = {priority}
+        // onHandleChange = {onChangePriority}
         />
       ) : (
         'No Tasks to Show'

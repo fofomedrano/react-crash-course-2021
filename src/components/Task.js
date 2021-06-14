@@ -1,6 +1,6 @@
 import {FaTimes} from 'react-icons/fa'
 
-const Task = ({task, onDelete, onToggle}) => {
+const Task = ({task, onDelete, onToggle, onHandleChange}) => {
     return (
         <div className={`task ${task.reminder ?
              'reminder': ''}`} 
@@ -13,7 +13,9 @@ const Task = ({task, onDelete, onToggle}) => {
              onClick={()=> onDelete(task.id)}/>
             </h3>
             <p>{task.day}</p>
-            <input type="text"/>
+            <p>{task.urgency}</p>
+            <input type="text" name= "name"/>
+            {/* onChange = {(event) => onHandleChange(event)} */}
         </div>
     )
 }
